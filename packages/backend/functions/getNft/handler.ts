@@ -5,7 +5,7 @@ const client = new DynamoDBClient({ region: 'eu-west-1' });
 
 export const main = async (): Promise<any> => {
   const params = {
-    TableName: process.env.NFT_TABLE_NAME,
+    tableName: process.env.NFT_TABLE_NAME,
     ExpressionAttributeValues: {
       ':pk': { S: 'Nft' },
     },

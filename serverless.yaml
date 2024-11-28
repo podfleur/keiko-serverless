@@ -1,0 +1,13 @@
+service: keiko-serverless  # Name of the service
+
+provider:
+  name: aws  # Cloud provider (AWS in this case)
+  runtime: nodejs18.x  # Runtime environment (Node.js 18.x)
+
+functions:
+  logMessage:
+    handler: handler.logMessage  # Handler for the function
+    events:
+      - http:
+          path: log  # Trigger the function via HTTP GET request at /log
+          method: get
